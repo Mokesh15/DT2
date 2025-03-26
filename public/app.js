@@ -12,7 +12,7 @@ async function getIP() {
 async function generateQR() {
     let subject = document.getElementById("subject").value;
     let ownerIP = await getIP();
-    let qrText = `http://localhost:3000/display?owner_ip=${encodeURIComponent(ownerIP)}&subject=${encodeURIComponent(subject)}`;
+    let qrText = `https://dt2-production.up.railway.app/display?owner_ip=${encodeURIComponent(ownerIP)}&subject=${encodeURIComponent(subject)}`;
 
     document.getElementById("qrcode").innerHTML = "";
     new QRCode(document.getElementById("qrcode"), qrText);
